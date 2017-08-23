@@ -1,4 +1,5 @@
 # Pur
+React UI component library (using [styled-components](https://www.styled-components.com)).  
 
 ## Get Started
 - Install Pure: `yarn install react-pur` (**there is no 'e', be careful**)
