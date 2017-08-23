@@ -1,8 +1,8 @@
 # Components
 
 - [Provider](#provider)
-- [General Components](#general-components)
 - [Layout](#layout)
+- [General Components](#general-components)
 
 ## Provider
 You need to wrap your entire code using Pur with this component. An alternative theme can be passed through its `theme` property.  
@@ -25,6 +25,95 @@ const alternativeTheme = {
 ```
 
 - **theme**, *Object*: alternative theme. Check `/src/theme.js` for more further details  
+
+## Layout
+Layout using Pur isn't such a big deal. [If you're used to Bootstrap](https://getbootstrap.com/docs/4.0/layout/grid/), you'll quickly get used to it.  
+
+### Each Component
+Each component can take extra properties among the following: `sm`, `md`, `lg` and `xl`. Each must being provided an *Object* containing a list of CSS properties to apply for the according matched view size.  
+
+For example, if an element needs extra padding from medium (`md`) screen sizes:
+```jsx
+<Container p={15} md={{ padding: '30px' }}>
+  This container will get more padding on bigger screens.
+</Container>
+```
+
+### Col
+Grid column, must be inside a flex container (`Row` for example).  
+
+```jsx
+<Row>
+  <Col>1</Col>
+  <Col size={3}>2</Col>
+  <Col>3</Col>
+</Row>
+
+/**
+ * sm:
+ *  1 | 2 | 3
+ *
+ * md:
+ *   1
+ * 2 | 3
+ */
+<Row>
+  <Col size={4} md={12}>1</Col>
+  <Col size={4} md={6}>2</Col>
+  <Col size={4} md={6}>3</Col>
+</Row>
+```
+
+- **size**, *Number*: size inside its current container, **out of 12, just like in Bootstrap**. It's considered as the default size if no other constraints are given with `sm`-`xl` properties
+- **sm**, *Number*: `min-width: 540px`
+- **md**, *Number*: `min-width: 720px`
+- **lg**, *Number*: `min-width: 960px`
+- **xl**, *Number*: `min-width: 1140px`  
+
+*Note: if no value is given to `sm`-`xl` properties, Pur will assume you want to make it full width (=12, full line).*
+
+### Container
+A simple `div` container.
+
+```jsx
+<Container fluid>Hi</Container>
+```
+
+- **fluid**: make it full width (100%)
+- **bordered**: add a thing light border
+
+### ItemsRow
+`Row`, but add some extra space between its elements.  
+
+```jsx
+<ItemsRow>
+  <Col>1</Col>
+  <Col>2</Col>
+  <Col>3</Col>
+</ItemsRow>
+```
+
+- **spaceBetween**, *String* (will probably become *Number* soon): specify how many pixels should be added between each item. Default to `15px`
+
+### Line
+A `div` with a `12px` bottom margin.  
+
+```jsx
+<Line>My content</Line>
+```
+
+### Row
+A flex container.
+
+```jsx
+<Row>
+  <Col>1</Col>
+  <Col>2</Col>
+  <Col>3</Col>
+</Row>
+```
+
+- **fluid**: make it full width (100%)
 
 ## General Components
 ### A
@@ -487,82 +576,3 @@ Must be used inside a `UserCard`.
 ```
 
 *Note: you'll probably need to adapt its `line-height` property manually if you change its `font-size`.*
-
-## Layout
-Layout using Pur isn't such a big deal. [If you're used to Bootstrap](https://getbootstrap.com/docs/4.0/layout/grid/), you'll quickly get used to it.  
-
-### Col
-Grid column, must be inside a flex container (`Row` for example).  
-
-```jsx
-<Row>
-  <Col>1</Col>
-  <Col size={3}>2</Col>
-  <Col>3</Col>
-</Row>
-
-/**
- * sm:
- *  1 | 2 | 3
- *
- * md:
- *   1
- * 2 | 3
- */
-<Row>
-  <Col size={4} md={12}>1</Col>
-  <Col size={4} md={6}>2</Col>
-  <Col size={4} md={6}>3</Col>
-</Row>
-```
-
-- **size**, *Number*: size inside its current container, **out of 12, just like in Bootstrap**. It's considered as the default size if no other constraints are given with `sm`-`xl` properties
-- **sm**, *Number*: `max-width: 540px`
-- **md**, *Number*: `max-width: 720px`
-- **lg**, *Number*: `max-width: 960px`
-- **xl**, *Number*: `max-width: 1140px`  
-
-*Note: if no value is given to `sm`-`xl` properties, Pur will assume you want to make it full width (=12, full line).*
-
-### Container
-A simple `div` container.
-
-```jsx
-<Container fluid>Hi</Container>
-```
-
-- **fluid**: make it full width (100%)
-- **bordered**: add a thing light border
-
-### ItemsRow
-`Row`, but add some extra space between its elements.  
-
-```jsx
-<ItemsRow>
-  <Col>1</Col>
-  <Col>2</Col>
-  <Col>3</Col>
-</ItemsRow>
-```
-
-- **spaceBetween**, *String* (will probably become *Number* soon): specify how many pixels should be added between each item. Default to `15px`
-
-### Line
-A `div` with a `12px` bottom margin.  
-
-```jsx
-<Line>My content</Line>
-```
-
-### Row
-A flex container.
-
-```jsx
-<Row>
-  <Col>1</Col>
-  <Col>2</Col>
-  <Col>3</Col>
-</Row>
-```
-
-- **fluid**: make it full width (100%)
