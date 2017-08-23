@@ -2,7 +2,7 @@
 React UI component library (using [styled-components](https://www.styled-components.com)).  
 
 ## Get Started
-- Install Pure: `yarn install react-pur` (**there is no 'e', be careful**)
+- Install Pur: `npm install react-pur` or `yarn install react-pur` (**there is no 'e', be careful**)
 - Wrap your application with `Provider`:
 ```jsx
 import React from 'react';
