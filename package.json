@@ -1,10 +1,10 @@
 {
-  "name": "pure",
+  "name": "react-pur",
   "version": "0.0.1",
   "description": "React UI component library (using styled-components)",
   "author": "Arnaud Dellinger",
   "main": "build/index.js",
-  "license": "MIT",
+  "license": "GPL 3.0",
   "peerDependencies": {
     "react": "^15.5.4"
   },
@@ -29,5 +29,18 @@
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.5.1"
-  }
+  },
+  "directories": {
+    "doc": "doc",
+    "example": "examples"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eveningkid/react-pur.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/eveningkid/react-pur/issues"
+  },
+  "homepage": "https://github.com/eveningkid/react-pur#readme"
 }
