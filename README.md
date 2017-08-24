@@ -18,4 +18,6 @@ class Application extends React.Component {
   }
 }
 ```
-- [Learn about Pur components](doc/components.md)
+- [Learn about Pur components](doc/components.md)  
+
+Feel free to give any suggestions here or [@eveningkid](https://twitter.com/eveningkid)!
